@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Você</title>
+
+  <!-- Fonte cursiva elegante -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      padding: 0;
+    }
+
+    body {
+      padding-top: 150px;
+      background-color: black;
+      color: white;
+      background-image: url("img/fundo.png");
+      font-family: 'Great Vibes', cursive;
+      overflow-x: hidden;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5vh 5vw;
+      gap: 3rem;
+      min-height: 100vh;
+    }
+
+    section.visual {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 1/1;
+    }
+
+    .girando {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      animation: girar 20s linear infinite;
+      z-index: 1;
+    }
+
+    .corpo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    @keyframes girar {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .mensagem {
+      max-width: 90%;
+      text-align: center;
+      font-size: 1.7rem;
+      line-height: 2.2rem;
+      animation: aparecer 2s ease forwards;
+      opacity: 0;
+    }
+
+    .mensagem:nth-of-type(1) { animation-delay: 1s; }
+    .mensagem:nth-of-type(2) { animation-delay: 3.5s; }
+    .mensagem:nth-of-type(3) { animation-delay: 6s; }
+    .mensagem:nth-of-type(4) { animation-delay: 9s; }
+    .mensagem:nth-of-type(5) { animation-delay: 12s; }
+
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="visual">
+      <img src="img/texto.png" alt="Texto girando" class="girando" />
+      <img src="img/corpo.png" alt="Corpo estático" class="corpo" />
+    </section>
+
+    <div class="mensagem">Hoje é seu dia, e meu coração só consegue agradecer por você existir.</div>
+    <div class="mensagem">Você é abrigo, calma, intensidade e tudo o que há de mais bonito em alguém.</div>
+    <div class="mensagem">Feliz aniversário! Que a vida seja sempre doce contigo — como você é comigo.</div>
+    <div class="mensagem">Aproveite seu dia, amor 🤍</div>
+    <div class="mensagem">Com carinho, Mateus.</div>
+
+  </main>
+
+  <!-- Música de fundo -->
+  <audio autoplay loop>
+    <source src="musica/parabens.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio.
+  </audio>
+</body>
+</html>
